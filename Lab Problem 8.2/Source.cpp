@@ -41,3 +41,16 @@ int countWords(string str)
 	}
 	return wordcount;
 }
+
+int main()
+{
+	string input;
+	while (true)
+	{
+		cout << "Enter a string or Q to quit: ";
+		getline(cin, input);
+		if (input == "Q" || input == "q")
+			break;
+		cout << "Word count: " << countWords(input) << endl;
+	}
+}
