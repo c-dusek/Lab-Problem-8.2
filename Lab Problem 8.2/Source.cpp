@@ -1,14 +1,28 @@
 #include <iostream>
 #include <string>
 using namespace std;
+ 
+int countWords(string str);
 
+int main()
+{
+	string input;
+	while (true)
+	{
+		cout << "Enter a string or Q to quit: ";
+		getline(cin, input);
+		if (input == "Q" || input == "q")
+			break;
+		cout << "Word count: " << countWords(input) << endl;
+	}
+}
 int countWords(string str)
 {
-	int i = str.size(), wordcount = 1; 
+	int i = str.size(), wordcount = 1;
 	char indiv = 'a', before = 'a';
 	for (int n = 0; n <= i; n++)
 	{
-		
+
 		if (n >= 1)
 		{
 			indiv = str[n];
@@ -26,10 +40,4 @@ int countWords(string str)
 		}
 	}
 	return wordcount;
-}
-
-int main()
-{
-	string input = "one two three 4      5 6 7 eight";
-	cout << countWords(input);
 }
